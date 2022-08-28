@@ -1,5 +1,5 @@
 import React from 'react';
-import { addToDb } from '../../utilities/fakedb';
+import { addToDb, deleteToDb } from '../../utilities/fakedb';
 
 const Cosmetic = (props) => {
     const {name, price, _id} = props.cosmetic;
@@ -10,6 +10,7 @@ const Cosmetic = (props) => {
             <p>Only for $: {price}</p>
             <small>it has id: {_id}</small> <br />
             <button onClick={()=>addToDb(_id)}>add to cart</button>
+            <button onClick={()=>deleteToDb(_id)}>Remove</button>
         </div>
     );
 };
